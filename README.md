@@ -19,3 +19,13 @@ jupytext --from myst --to myst --execute notebooks/index.md \
   *executed*, the output isn't embedded in the notebook for the hugo conversion
   step. **N.B.** - `--update` flag for `jupytext` has no effect: not storing output
   is part of the myst notebook format (I think).
+
+## Attempt 2: MyST notebook (markdown), execute+convert to pandoc, convert with hugo
+
+Similar to the above except replace `--to myst` with `--to pandoc` to get a
+[pandoc-style Jupyter notebook](https://pandoc.org/MANUAL.html#jupyter-notebooks).
+
+**Problems**
+- Similar to above: output is not stored in pandoc-style notebook format even
+  after execution.
+- hugo pandoc engine doesn't appear to recognize the pandoc-style notebook format
